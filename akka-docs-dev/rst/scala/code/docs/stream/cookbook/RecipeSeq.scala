@@ -16,7 +16,6 @@ class RecipeSeq extends RecipeSpec {
     "work" in {
       val result = immutable.Seq[Message]("1", "2", "3")
       val myData = Source(result)
-      val MaxAllowedSeqSize = 100
 
       //#draining-to-seq-unsafe
       val unsafe: Future[Seq[Message]] = myData.runWith(Sink.seq) // dangerous!
